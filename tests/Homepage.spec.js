@@ -91,7 +91,6 @@ test.describe('Homepage' , () =>{
         const randomProductIndex  = await homepage.randomProductIndex
         console.log(randomProductIndex)
         await expect(homepage.productHoverOverlay.nth(randomProductIndex)).toBeVisible()
-        await page.pause()
     })
 
 })
