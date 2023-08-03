@@ -84,7 +84,7 @@ export class Homepage {
         await this.subscribeBtn.click()    
     }
  
-    //Visit homepage
+    //Visit Homepage
     async visitHomepage()
     {
         await this.page.goto('/')
