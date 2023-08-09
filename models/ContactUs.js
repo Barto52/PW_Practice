@@ -28,8 +28,6 @@ export class ContactUs{
     {
         const filePath = './data/contactUsFile.txt'
         const firstNameFaker = await faker.person.firstName()
-
-        console.log(firstNameFaker)
         await this.nameInput.fill(firstNameFaker)
         await this.emailInput.fill(faker.internet.email({firstName: firstNameFaker}))
         await this.subjectInput.fill(faker.lorem.sentence())
