@@ -84,7 +84,7 @@ test.describe('Homepage' , () =>{
         await expect(page.locator('img[alt="Website for automation practice"]')).toBeVisible()
     })
 
-    test.only('Verify hover on a product image', async ({page}) =>{
+    test('Verify hover on a product image', async ({page}) =>{
         const homepage = new Homepage(page)
         await homepage.hoverOnProduct()
         const randomProductIndex  = await homepage.randomProductIndex

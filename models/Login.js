@@ -41,11 +41,20 @@ export class Login{
         await this.loginBtn.click()
     }
 
+    //Register a new user. Return "name" and "email" in object
+   async validSignup()
+   {
+    const name = faker.internet.userName()
+    const email = faker.internet.email({firstName: name})
+    await this.registerNameInput.fill(name)
+    await this.registerEmailInput.fill(email)
+    await this.signupBtn.click()
+    return {name, email}
+   }
+
    //Visit LoginPage
    async visitLoginpage()
    {
        this.page.goto('https://www.automationexercise.com/login')
    }
-
-
 }

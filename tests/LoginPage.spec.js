@@ -1,8 +1,5 @@
 import { Login } from "../models/Login"; 
-import { test, expect } from "@playwright/test";
-
-
-
+import { test, expect, request } from "@playwright/test";
 
 test.describe('Loginpage', () => {
 
@@ -22,10 +19,9 @@ test.describe('Loginpage', () => {
         await login.logout()
         await expect(page).toHaveURL('https://www.automationexercise.com/login')
         await expect(login.loggedAs).not.toBeVisible()
-        await page.pause()
     })
 
-    test.only('Should NOT login with invalid data', async ({page}) =>{
+    test('Should NOT login with invalid data', async ({page}) =>{
 
         //Should not login with fake data created by faker
         const login = new Login(page)
@@ -33,11 +29,6 @@ test.describe('Loginpage', () => {
         await login.invalidLogin()
         await expect(login.loginError).toBeVisible()
         await expect(page).toHaveURL('https://www.automationexercise.com/login')
-        await page.pause()
     })
-
-
-
-
 
 })
